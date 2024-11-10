@@ -6,6 +6,8 @@ import Navigation from './components/Navigation.jsx';
 import Hero from './sections/Hero.jsx';
 import Aboutus from './sections/Aboutus.jsx';
 import OurSpecialty from './sections/OurSpecialty.jsx';
+import JoinNFT from './sections/JoinNFT.jsx';
+
 function App() {
   return (
     <div className="w-full md:px-[120px]   bg-b-blue flex-col justify-center  gap-2 overflow-hidden ">
@@ -15,6 +17,8 @@ function App() {
    <Aboutus/>
   
    <OurSpecialty/>
+
+   <JoinNFT/>
     
    
     </div>
