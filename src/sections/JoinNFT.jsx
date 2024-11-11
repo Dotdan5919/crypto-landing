@@ -12,7 +12,10 @@ const JoinNFT = () => {
     
     <div>
     <div> 
-    <Iconbox/>
+    <Iconbox title="Connect your wallet" description="Suspendisse tristique neque a lorem
+Placerat pharetra. Class patent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos
+"  />
 
     </div>
 
