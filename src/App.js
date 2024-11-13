@@ -7,6 +7,7 @@ import Hero from './sections/Hero.jsx';
 import Aboutus from './sections/Aboutus.jsx';
 import OurSpecialty from './sections/OurSpecialty.jsx';
 import JoinNFT from './sections/JoinNFT.jsx';
+import OurCollection from './sections/OurCollection.jsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
    <JoinNFT/>
     
+   <OurCollection/>
    
     </div>
   );
