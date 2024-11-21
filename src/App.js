@@ -23,7 +23,7 @@ function App() {
    <JoinNFT/>
    <img src={blueblur} className='absolute  -top-580  left-80 z-0' />
    <OurCollection/>
-   
+   <div></div>
     </div>
   );
 }
