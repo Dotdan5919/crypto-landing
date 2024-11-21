@@ -11,7 +11,7 @@ const Smallbox2 = ({smalltext,largetext,classes}) => {
     <div>
     <h1 className='font-sans text-xs'>{largetext}</h1>
     <p className=' text-[12px]'>{smalltext}</p>
-    
+    <div></div>
     </div>
       
     </div>
