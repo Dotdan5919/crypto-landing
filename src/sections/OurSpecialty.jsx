@@ -4,7 +4,7 @@ import IconDisplay from '../components/IconDisplay'
 
 const OurSpecialty = () => {
   return (
-    <div className=' flex justify-center gap-[16px] items-center flex-col my-[156px] py-[48px] '>
+    <div className=' flex justify-center gap-[16px] items-center flex-col my-[156px] py-[48px] z-50 '>
       
 
     <Uniquetitle txt="Our Specialty" />

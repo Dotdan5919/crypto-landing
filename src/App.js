@@ -15,13 +15,13 @@ function App() {
     <div className="w-full md:px-[120px] relative  bg-b-blue flex-col justify-center  gap-2 overflow-hidden ">
      
    <Hero/>
-   <img src={blueblur} className='absolute  -top-80  left-80 z-0' />
+   <img src={blueblur} className='absolute  -top-80  left-80 z-10' />
    <Aboutus/>
-   <img src={blueblur} className='absolute  -top-280  left-80 z-0' />
+   <img src={blueblur} className='absolute  -top-280  left-80 z-10' />
    <OurSpecialty/>
-   <img src={blueblur} className='absolute  -top-380  left-80 z-0' />
+   <img src={blueblur} className='absolute  -top-380  left-80 -z-10' />
    <JoinNFT/>
-   <img src={blueblur} className='absolute  -top-580  left-80 z-0' />
+   <img src={blueblur} className='absolute  -top-580  left-80 -z-10' />
    <OurCollection/>
    
     </div>

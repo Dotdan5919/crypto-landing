@@ -1,34 +1,84 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import carousel1 from '../ImageAssets/carousel_1.jpg'
 import CarouselElement from './CarouselElement'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-
+import { FaArrowLeft, FaArrowRight, FaCircle, FaEllipsisH, FaEllipsisV } from 'react-icons/fa'
+import {Collection} from '../Data/Data.js'
 const Imgcarousel = () => {
+
+  const[collection,setCollection]=useState();
+
+  
+
+  useEffect(()=>{
+
+
+    
+
+  });
+
+
+  const handleClickLeft=()=>{
+
+
+    let slider=document.getElementById('slider');
+    slider.style.scrollBehavior="smooth";
+    slider.scrollLeft-=1000;
+
+console.log("clicked left")
+  }
+  const handleClickRight=()=>{
+
+
+    let slider=document.getElementById('slider');
+    slider.style.scrollBehavior="smooth";
+    slider.scrollLeft+=1000;
+
+console.log("clicked Right")
+  }
+  
+
+  
   return (
     <div className='flex gap-[16px] w-full flex-col'>
       
-<div   className='flex gap-[16px] w-full overflow-hidden' >
+<div   className='flex gap-[16px] w-full overflow-hidden' id='slider' >
   
+<div className=' ml-52'></div>
 
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
-    <CarouselElement name="King of pirates"/>
+{Collection.map((item)=>{
+
+
+return(<CarouselElement img={item.img} name={item.name}/>)
+}
+)
+}
+
+
 
     </div>
-<div className="flex gap-5">
+<div className="flex gap-5 w-full  items-center justify-center">
 
-<div className="rounded-full border-solid border-white
-border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in">
-<FaArrowLeft className='text-xl'/>
+<div className="rounded-full border-solid border-white hover:border-my-blue
+border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" onClick={handleClickLeft}>
+<FaArrowLeft className='text-xl hover:text-my-blue'/>
 </div>
 
-<div className="rounded-full border-solid border-white
-border-[1px] w-10  h-10 text-white flex justify-center items-center hover:scale-110 transition-all duration-100 ease-in ">
-<FaArrowRight className='text-xl'/>
+<div>
+<div className="flex gap-[3px]">
+
+<FaCircle className='text-white ' size={9}/>
+<FaCircle className='text-white  opacity-20' size={9}/>
+<FaCircle className='text-white opacity-20  opacity-20' size={9}/>
+<FaCircle className='text-white opacity-20 ' size={9}/>
+<FaCircle className='text-white  opacity-20' size={9}/>
+
+
+
+</div>
+</div>
+<div className="rounded-full border-solid border-white hover:border-my-blue
+border-[1px] w-10  h-10 text-white flex justify-center items-center hover:scale-110 transition-all duration-100 ease-in " onClick={handleClickRight}>
+<FaArrowRight className='text-xl hover:text-my-blue'/>
 </div>
 
 

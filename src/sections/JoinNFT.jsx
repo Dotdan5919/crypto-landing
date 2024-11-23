@@ -5,7 +5,7 @@ import ai_image2 from '../ImageAssets/ai_image2.png'
 
 const JoinNFT = () => {
   return (
-    <div className='flex gap-[16px] flex-col items-center align-item '>
+    <div className='flex gap-[16px] flex-col items-center align-item z-50 '>
 
     <Uniquetitle txt="Join NFT Portfolio" />
     <h1 className="font-sans text-[32px] text-white  text-center">Become a Cyfoni
