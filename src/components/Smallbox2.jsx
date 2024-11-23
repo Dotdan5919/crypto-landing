@@ -13,7 +13,7 @@ const Smallbox2 = ({smalltext,largetext,classes}) => {
     <p className=' text-[12px]'>{smalltext}</p>
     <div></div>
     </div>
-      
+      ds
     </div>
   )
 }
