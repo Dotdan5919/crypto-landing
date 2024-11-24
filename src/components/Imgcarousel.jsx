@@ -24,7 +24,8 @@ const Imgcarousel = () => {
     slider.style.scrollBehavior="smooth";
     slider.scrollLeft-=1000;
 
-console.log("clicked left")
+    console.log(slider.scroll)
+
   }
   const handleClickRight=()=>{
 
@@ -33,13 +34,15 @@ console.log("clicked left")
     slider.style.scrollBehavior="smooth";
     slider.scrollLeft+=1000;
 
-console.log("clicked Right")
+console.log(slider.scroll)
   }
   
 
+  const Inactive="opacity-5 text-gray-200";
+
   
   return (
-    <div className='flex gap-[16px] w-full flex-col'>
+    <div className='flex gap-[16px] w-full flex-col '>
       
 <div   className='flex gap-[16px] w-full overflow-hidden' id='slider' >
   
@@ -58,8 +61,7 @@ return(<CarouselElement img={item.img} name={item.name}/>)
     </div>
 <div className="flex gap-5 w-full  items-center justify-center">
 
-<div className="rounded-full border-solid border-white hover:border-my-blue
-border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" onClick={handleClickLeft}>
+<div className={"rounded-full border-solid border-white hover:border-my-blue border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" + ''+ {Collection}} onClick={handleClickLeft}>
 <FaArrowLeft className='text-xl hover:text-my-blue'/>
 </div>
 
