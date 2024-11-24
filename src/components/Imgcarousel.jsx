@@ -6,13 +6,16 @@ import {Collection} from '../Data/Data.js'
 const Imgcarousel = () => {
 
   const[collection,setCollection]=useState();
+  
+  const [slider,setSlider]=useState(document.getElementById('slider'));
 
   
+
 
   useEffect(()=>{
 
 
-    
+  
 
   });
 
@@ -24,7 +27,7 @@ const Imgcarousel = () => {
     slider.style.scrollBehavior="smooth";
     slider.scrollLeft-=1000;
 
-    console.log(slider.scroll)
+    console.log(slider.scrollRight)
 
   }
   const handleClickRight=()=>{
@@ -34,7 +37,7 @@ const Imgcarousel = () => {
     slider.style.scrollBehavior="smooth";
     slider.scrollLeft+=1000;
 
-console.log(slider.scroll)
+console.log(slider.scrollLeft)
   }
   
 
@@ -61,8 +64,8 @@ return(<CarouselElement img={item.img} name={item.name}/>)
     </div>
 <div className="flex gap-5 w-full  items-center justify-center">
 
-<div className={"rounded-full border-solid border-white hover:border-my-blue border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" + ''+ {Collection}} onClick={handleClickLeft}>
-<FaArrowLeft className='text-xl hover:text-my-blue'/>
+<div className={"rounded-full border-solid border-white hover:border-my-blue border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" + ''+ (slider?'':'')} onClick={handleClickLeft}>
+<FaArrowLeft className='text-xl hover:text-my-blue' disable={true}/>
 </div>
 
 <div>
