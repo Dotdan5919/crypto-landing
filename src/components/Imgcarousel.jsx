@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import carousel1 from '../ImageAssets/carousel_1.jpg'
 import CarouselElement from './CarouselElement'
 import { FaArrowLeft, FaArrowRight, FaCircle, FaEllipsisH, FaEllipsisV } from 'react-icons/fa'
 import {Collection} from '../Data/Data.js'
 const Imgcarousel = () => {
 
-  const[collection,setCollection]=useState();
+  
   const [deactivateBtn,setDeactivateBtn]=useState();
   
-  const [slider,setSlider]=useState(document.getElementById('slider'));
+  // const [slider,setSlider]=useState(document.getElementById('slider'));
 
-  
+  const [scrollposition,setScrollposition]=useState(0);
+  const sliderRef = useRef(null);
 
 
   useEffect(()=>{
@@ -29,14 +30,14 @@ const Imgcarousel = () => {
   const handleClickLeft=()=>{
     
     // 
-      
-    let slider=document.getElementById('slider');
-    if(slider.scrollLeft>0){
-    slider.style.scrollBehavior="smooth";
-    slider.scrollLeft-=slider.clientWidth;
+    if(sliderRef.current){ 
+    // let slider=document.getElementById('slider');
+    if(sliderRef.current.scrollLeft>0){
+      sliderRef.current.style.scrollBehavior="smooth";
+      sliderRef.current.scrollLeft-=sliderRef.current.clientWidth;
 
-    console.log(slider.scrollLeft);
-  console.log('client Width'+slider.clientWidth); 
+    console.log(sliderRef.current.scrollLeft);
+  console.log('client Width'+sliderRef.current.clientWidth); 
   setDeactivateBtn("");
   
 }
@@ -47,39 +48,62 @@ else{
 
   setDeactivateBtn("Left")
 }
-
+    }
   }
   const handleClickRight=()=>{
 
-    let slider=document.getElementById('slider');
-    if(slider.scrollLeft<slider.clientWidth){
+    if(sliderRef.current){  
+    if(sliderRef.current.scrollLeft<sliderRef.current.clientWidth){
 
  
-    slider.style.scrollBehavior="smooth";
-    slider.scrollLeft+=slider.clientWidth;
+      sliderRef.current.style.scrollBehavior="smooth";
+      sliderRef.current.scrollLeft+=sliderRef.current.clientWidth;
 
-console.log(slider.scrollLeft);
-console.log('client Width'+slider.clientWidth);
+console.log(sliderRef.current.scrollLeft);
+console.log('client Width'+sliderRef.current.clientWidth);
 setDeactivateBtn("");
-
 }
+
+
 else{
 
   
 
   setDeactivateBtn("Right")
 }
-
+}
   }
   
 
-  const Inactive="opacity-5 text-gray-200";
+const handleClickDot=(x)=>
+{
+
+  if(sliderRef.current){
+
+
+ sliderRef.current.scrollBehavior="smooth";
+  // let slider=document.getElementById('slider');
+  // slider.style.scrollBehavior="smooth";
+  if(scrollposition!==x){
+    sliderRef.current.scrollLeft+=(sliderRef.current.clientWidth*x);
+    // sliderRef.current.scrollLeft-=(sliderRef.current.clientWidth*x); 
+  }
+    
+    
+
+  setScrollposition(x);
+   console.log(x);
+}
+
+
+
+}
 
   
   return (
     <div className='flex gap-[16px] w-full flex-col '>
       
-<div   className='flex gap-[16px] w-full overflow-hidden' id='slider' >
+<div   className='flex gap-[16px] w-full overflow-hidden' id='slider' ref={sliderRef} >
   
 <div className=' ml-52'></div>
 
@@ -115,10 +139,32 @@ return(<CarouselElement img={item.img} name={item.name}/>)
 
 {
 
-  return (
-  <FaCircle className='text-white'  size={9}/>
+  if(index>=Math.floor(Collection.length/2)){ 
 
-);
+}
+
+
+else{
+
+  if(scrollposition===index){
+console.log(index);
+    return (
+    <FaCircle className='text-white' key={index}  size={9} onClick={()=>handleClickDot(index)}/>
+    )
+  }
+  else{
+    
+console.log(index);
+  
+    return(
+    <FaCircle className='text-white  opacity-20' size={9} onClick={()=>handleClickDot(index)}/>
+  )
+  
+  }  
+
+
+}
+
   
 
 })
@@ -126,12 +172,6 @@ return(<CarouselElement img={item.img} name={item.name}/>)
 
 
 }
-<FaCircle className='text-white ' size={9}/>
-<FaCircle className='text-white  opacity-20' size={9}/>
-<FaCircle className='text-white opacity-20  opacity-20' size={9}/>
-<FaCircle className='text-white opacity-20 ' size={9}/>
-<FaCircle className='text-white  opacity-20' size={9}/>
-
 
 
 </div>
