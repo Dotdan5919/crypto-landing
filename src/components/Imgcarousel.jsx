@@ -6,6 +6,7 @@ import {Collection} from '../Data/Data.js'
 const Imgcarousel = () => {
 
   const[collection,setCollection]=useState();
+  const [deactivateBtn,setDeactivateBtn]=useState();
   
   const [slider,setSlider]=useState(document.getElementById('slider'));
 
@@ -15,29 +16,60 @@ const Imgcarousel = () => {
   useEffect(()=>{
 
 
+  //  if(deactivateBtn==="Left"){
+
+  //   setDeactivateBtn("Right");
+  //  }
   
+ console.log(deactivateBtn)
 
   });
 
 
   const handleClickLeft=()=>{
-
-
+    
+    // 
+      
     let slider=document.getElementById('slider');
+    if(slider.scrollLeft>0){
     slider.style.scrollBehavior="smooth";
-    slider.scrollLeft-=1000;
+    slider.scrollLeft-=slider.clientWidth;
 
-    console.log(slider.scrollRight)
+    console.log(slider.scrollLeft);
+  console.log('client Width'+slider.clientWidth); 
+  setDeactivateBtn("");
+  
+}
+
+else{
+
+  
+
+  setDeactivateBtn("Left")
+}
 
   }
   const handleClickRight=()=>{
 
-
     let slider=document.getElementById('slider');
-    slider.style.scrollBehavior="smooth";
-    slider.scrollLeft+=1000;
+    if(slider.scrollLeft<slider.clientWidth){
 
-console.log(slider.scrollLeft)
+ 
+    slider.style.scrollBehavior="smooth";
+    slider.scrollLeft+=slider.clientWidth;
+
+console.log(slider.scrollLeft);
+console.log('client Width'+slider.clientWidth);
+setDeactivateBtn("");
+
+}
+else{
+
+  
+
+  setDeactivateBtn("Right")
+}
+
   }
   
 
@@ -64,13 +96,36 @@ return(<CarouselElement img={item.img} name={item.name}/>)
     </div>
 <div className="flex gap-5 w-full  items-center justify-center">
 
-<div className={"rounded-full border-solid border-white hover:border-my-blue border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in" + ''+ (slider?'':'')} onClick={handleClickLeft}>
-<FaArrowLeft className='text-xl hover:text-my-blue' disable={true}/>
-</div>
+{deactivateBtn==="Left"?(<div className={"rounded-full border-solid border-white  border-[1px] w-10  h-10 text-white flex justify-center items-center   opacity-10"  } onClick={handleClickLeft}>
+  <FaArrowLeft className='text-xl ' />
+  </div>):
+  
+  (<div className={"rounded-full border-solid border-white hover:border-my-blue border-[1px] w-10  h-10 text-white flex justify-center items-center  hover:scale-110 transition-all duration-100 ease-in"  } onClick={handleClickLeft}>
+    <FaArrowLeft className='text-xl hover:text-my-blue' />
+    </div>)}
+
 
 <div>
 <div className="flex gap-[3px]">
 
+{Collection.map((_,index)=>
+
+
+
+
+{
+
+  return (
+  <FaCircle className='text-white'  size={9}/>
+
+);
+  
+
+})
+
+
+
+}
 <FaCircle className='text-white ' size={9}/>
 <FaCircle className='text-white  opacity-20' size={9}/>
 <FaCircle className='text-white opacity-20  opacity-20' size={9}/>
@@ -81,10 +136,18 @@ return(<CarouselElement img={item.img} name={item.name}/>)
 
 </div>
 </div>
-<div className="rounded-full border-solid border-white hover:border-my-blue
+
+{deactivateBtn==="Right"?(<div className="rounded-full border-solid border-white 
+  border-[1px] w-10  h-10 text-white flex justify-center items-center opacity-15 " onClick={handleClickRight}>
+  <FaArrowRight className='text-xl '/>
+  </div>):
+(
+  <div className="rounded-full border-solid border-white hover:border-my-blue
 border-[1px] w-10  h-10 text-white flex justify-center items-center hover:scale-110 transition-all duration-100 ease-in " onClick={handleClickRight}>
 <FaArrowRight className='text-xl hover:text-my-blue'/>
 </div>
+)}
+
 
 
 
