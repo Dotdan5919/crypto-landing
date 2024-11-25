@@ -9,6 +9,7 @@ import OurSpecialty from './sections/OurSpecialty.jsx';
 import JoinNFT from './sections/JoinNFT.jsx';
 import OurCollection from './sections/OurCollection.jsx';
 import blueblur from './ImageAssets/blueblur.png';
+import Roadmap from './sections/Roadmap.jsx'
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
    <JoinNFT/>
    <img src={blueblur} className='absolute  -top-580  left-80 -z-10' />
    <OurCollection/>
-   
+   <Roadmap/>
     </div>
   );
 }
