@@ -5,9 +5,10 @@ import { FaDiamond, FaX } from 'react-icons/fa6';
 const IconDisplay = ({number,title,description}) => {
 
     const [faicon,setfaIcon]=useState();
+    
+
 
     useEffect(()=>{
-
 
         switch (title) {
             case 'Big Community':
@@ -26,9 +27,9 @@ const IconDisplay = ({number,title,description}) => {
                             default:
                                 setfaIcon(<FaX/>);
                             }
+       
 
-
-    })
+    },[title])
 
 
 
