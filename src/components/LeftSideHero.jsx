@@ -22,7 +22,7 @@ Today
 <p className='text-white'>  Cyfonii is the premier marketplace for nitches, which are digital items you can truly 
 own for yourself</p>
 
-<Btngrad txt="Get Connected"/>
+<Btngrad txt="Get Connected" type={1}/>
 
 </div>
 

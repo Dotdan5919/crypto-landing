@@ -12,6 +12,7 @@ import blueblur from './ImageAssets/blueblur.png';
 import Roadmap from './sections/Roadmap.jsx'
 import OurTeam from './sections/OurTeam.jsx'
 import Testimonial from './sections/Testimonial.jsx'
+import Faq from './sections/Faq.jsx';
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
    <OurTeam/>
 <Testimonial/>
+<Faq/>
 
 
     </div>

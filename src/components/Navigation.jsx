@@ -38,7 +38,7 @@ const Navigation = () => {
     <div className=' items-center justify-center gap-[8px] hidden md:flex'>
         <FaSearch size={16}/>
     
-    <Btngrad txt="Join us"/>
+    <Btngrad txt="Join us"  type={1}/>
 
     </div>
 
@@ -62,7 +62,7 @@ const Navigation = () => {
     <div className=' items-center justify-center gap-[8px] flex'>
         <FaSearch size={16}/>
     
-    <Btngrad txt="Join us"/>
+    <Btngrad txt="Join us" type={1}/>
     
     </div>
 </div>) }

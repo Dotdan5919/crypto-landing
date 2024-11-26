@@ -105,7 +105,7 @@ const Roadmap = () => {
 
 <div className="flex justify-center items-center mt-5">
 
-<Btngrad  txt="View full Roadmap"/>
+<Btngrad  txt="View full Roadmap" type={1}/>
 
 
 </div>

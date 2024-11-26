@@ -44,7 +44,7 @@ Excepteur sint occae cat cupidatat non provident,
 sunt in culpa qui official dese runt mollit anim id est
  laborum velit esse cillum dolore eu fugiat nulla pariatu 
  epteur sint occaecat </p>
- <Btngrad txt="More about us"/>
+ <Btngrad txt="More about us" type={1}/>
         </div>
      
 
