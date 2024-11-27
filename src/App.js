@@ -13,6 +13,7 @@ import Roadmap from './sections/Roadmap.jsx'
 import OurTeam from './sections/OurTeam.jsx'
 import Testimonial from './sections/Testimonial.jsx'
 import Faq from './sections/Faq.jsx';
+import Portfolio from './sections/Portfolio.jsx';
 
 
 
@@ -36,7 +37,7 @@ function App() {
    <OurTeam/>
 <Testimonial/>
 <Faq/>
-
+<Portfolio/>
 
     </div>
   );

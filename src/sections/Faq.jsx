@@ -1,9 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Uniquetitle from '../components/Uniquetitle'
 import Btngrad from '../components/Btngrad'
 import FaqComponent from '../components/FaqComponent'
+import { CryptoQ } from '../Data/CryptoQ.ts'
+import { CollectionQ } from '../Data/CollectionQ.ts'
+import { NftQ } from '../Data/NftQ.ts'
+import { TradingQ } from '../Data/TradingQ.ts'
+
 
 const Faq = () => {
+
+const [activeFaq,setActiveFaq]=useState("Cryptocurrency");
+
+const [faqs,setFaqs]=useState(CryptoQ);
+
+
+
+
+useEffect(()=>{
+
+
+console.log(activeFaq);
+switch(activeFaq){
+
+case "Cryptocurrency":
+    setFaqs(CryptoQ);
+    break;
+    case "Collection":
+        setFaqs(CollectionQ);
+        break;
+        case "Nft Tokens":
+            setFaqs(NftQ);
+            break;
+            case "Crypto Trading":
+                setActiveFaq(TradingQ);
+                break;
+                default:
+                    setFaqs(CryptoQ);
+                    break;
+
+
+}
+
+
+},[activeFaq])
+
   return (
     <div className='flex flex-col gap-3 text-white text-center items-center justify-center'>
       
@@ -17,10 +58,12 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
 
 <div className="flex flex-col gap-5">
 <div className="flex w-full items-center justify-center">
-<Btngrad txt="Cryptocurrency" />
-<Btngrad txt="Nft Tokens" />
-<Btngrad txt="Collection" />
-<Btngrad txt="Crypto Trading" />
+<Btngrad txt="Cryptocurrency"  active={(activeFaq==="Cryptocurrency"?true:false)}  Click={()=>{setActiveFaq("Cryptocurrency")}}/>
+
+
+<Btngrad txt="Nft Tokens"   active={(activeFaq==="Nft Tokens"?true:false)} Click={()=>{setActiveFaq("Nft Tokens")}}/>
+<Btngrad txt="Collection"   active={(activeFaq==="Collection"?true:false)} Click={()=>{setActiveFaq("Collection")}}/>
+<Btngrad txt="Crypto Trading"   active={(activeFaq==="Crypto Trading"?true:false)} Click={()=>{setActiveFaq("Crypto Trading")}}/>
 
 
 
@@ -28,17 +71,21 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
 </div>
 <hr className='w-full border-[1px] opacity-30 rounded-full border-white'/>
 
-<div className="grid grid-rows-4 grid-cols-2 w-full gap-5">
+<div className="grid-cols-2 grid grid-rows-4 gap-5">
 
-<FaqComponent number="01" txt="What is cryptocurrency?" description="Cryptocurrency is a digital currency that uses cryptography to secure transactions and is not controlled by a central authority like a bank or government. Instead, cryptocurrencies use a decentralized system to record transactions and manage new units."/>
-<FaqComponent number="01" txt="What is cryptocurrency?" description="Cryptocurrency is a digital currency that uses cryptography to secure transactions and is not controlled by a central authority like a bank or government. Instead, cryptocurrencies use a decentralized system to record transactions and manage new units."/>
+{ faqs.map((Faq)=>{
 
-<FaqComponent number="01" txt="What is cryptocurrency?" description="Cryptocurrency is a digital currency that uses cryptography to secure transactions and is not controlled by a central authority like a bank or government. Instead, cryptocurrencies use a decentralized system to record transactions and manage new units."/>
-<FaqComponent number="01" txt="What is cryptocurrency?" description="Cryptocurrency is a digital currency that uses cryptography to secure transactions and is not controlled by a central authority like a bank or government. Instead, cryptocurrencies use a decentralized system to record transactions and manage new units."/>
+    return (
+        <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description}/>
+
+    )
+
+
+
+
+})}
 
 </div>
-
-
 
 
 
