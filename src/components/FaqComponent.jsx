@@ -16,7 +16,7 @@ const FaqComponent = ({number,txt, description}) => {
 
       <FaPlus onClick={()=>{setActive(!active)}} className={'hover:scale-110 transition-all duration-700  ease-out cursor-pointer  ' + '' + (active && 'rotate-45') }/>
       </div>
-{active &&(<p className='text-sm  w-80 '>{description}</p>
+{active &&(<p className='text-sm  w-80 transition-all'>{description}</p>
 )}
       
     </div>

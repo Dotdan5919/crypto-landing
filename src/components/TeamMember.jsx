@@ -32,16 +32,16 @@ const TeamMember = ({name,img,position}) => {
 
 <div className="socials flex gap-2 justify-center items-center text-white text-[16px]">
 
-<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm">
-<FaFacebookF/>
+<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm hover:scale-110 duration-300 transition-all ease-in-out">
+<FaFacebookF />
 </div>
-<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm">
+<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm hover:scale-110 duration-300 transition-all ease-in-out">
 
-<FaXTwitter/>
+<FaXTwitter />
 </div>
-<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm">
+<div className="rounded-full flex justify-center items-center bg-gray-800/30 w-10 h-10 shadow-sm hover:scale-110 duration-300 transition-all ease-in-out">
 
-<FaTelegramPlane/>
+<FaTelegramPlane />
 </div>
 </div>
 
