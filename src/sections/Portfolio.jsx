@@ -11,7 +11,7 @@ const Portfolio = () => {
       <Btngrad2 txt="Join Now" />
 
       <div className=" absolute right-0 rounded-full w-52 h-52 bg-gradient-to-r from-orange-700 to-yellow-300 p-4"></div>
-    <div className="absolute right-10 rounded-full w-24 h-24 gradient-border"></div>
+    <div className="absolute right-10 rounded-full w-24 h-24 border-2 border-gray-200"></div>
     
       </div>
   )
