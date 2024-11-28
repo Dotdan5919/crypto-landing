@@ -71,7 +71,7 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
 </div>
 <hr className='w-full border-[1px] opacity-30 rounded-full border-white'/>
 
-<div className="grid-cols-2 grid grid-rows-4 gap-5">
+<div className="grid-cols-2 grid grid-rows-4 auto-cols-min grid-flow-col-dense  auto-rows-min   gap-5">
 
 { faqs.map((Faq)=>{
 
