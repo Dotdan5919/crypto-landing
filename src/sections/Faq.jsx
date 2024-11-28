@@ -71,20 +71,15 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
 </div>
 <hr className='w-full border-[1px] opacity-30 rounded-full border-white'/>
 
-<div className="grid-cols-2 grid grid-rows-4 auto-cols-min grid-flow-col-dense  auto-rows-min   gap-5">
-
-{ faqs.map((Faq)=>{
-
-    return (
-        <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description}/>
-
-    )
-
-
-
-
-})}
-
+<div class="flex gap-5">
+  <div class="">  {faqs.slice(0, 4).map((Faq) => (
+      <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description} />
+    ))}
+  </div>
+  <div class="">  {faqs.slice(4).map((Faq) => (
+      <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description} />
+    ))}
+  </div>
 </div>
 
 

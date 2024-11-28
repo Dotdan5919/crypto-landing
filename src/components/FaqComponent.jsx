@@ -7,7 +7,7 @@ const FaqComponent = ({number,txt, description,extraClass}) => {
     const[active, setActive]=useState(false);
 
   return (
-    <div className={'p-3 flex flex-col items-between  bg-gradient-to-b from-white/20 to-white/20 border-2 border-solid border-white border-opacity-40  w-full  rounded-2xl h-fit ' + (active && '')} >
+    <div className={'p-3 flex flex-col items-between  bg-gradient-to-b from-white/20 to-white/20 border-2 border-solid border-white border-opacity-40  w-full  rounded-2xl h-fit my-5 ' + (active && '')} >
 
    <div className="flex justify-around items-center gap-10"> <h1 className="font-sans">{number}</h1>
       <h1 className="font-sans w-full   text-sm">{txt}</h1>
