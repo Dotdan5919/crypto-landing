@@ -40,12 +40,4 @@
 
 /* new styles */
 
-.gradient-border {
-  border: 2px solid transparent; /* Transparent border to define the thickness */
-  border-image: radial-gradient(to right, blue, yellow) 1; /* Apply the gradient */
- 
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
 

@@ -79,6 +79,7 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
   <div class="">  {faqs.slice(4).map((Faq) => (
       <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description} />
     ))}
+  
   </div>
 </div>
 
