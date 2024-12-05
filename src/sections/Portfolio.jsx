@@ -18,7 +18,7 @@ const Portfolio = () => {
       </div>
       <img src={ai_image} className='absolute w-32 left-10 z-50'/>
     <div className="absolute right-10 rounded-full w-24 h-24 border-2 border-gray-200"></div>
-    <.div>
+ 
     </div>
       </div>
   )
