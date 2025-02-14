@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaEthereum } from 'react-icons/fa';
+import { FaEthereum } from 'react-icons/fa'
 
 const Smallbox2 = ({smalltext,largetext,classes}) => {
   return (

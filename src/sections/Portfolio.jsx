@@ -1,6 +1,6 @@
 import React from 'react'
 import Btngrad2 from '../components/Btngrad2'
-import ai_image from '../ImageAssets/ai_image3.png'
+import ai_image_3 from '../ImageAssets/ai_image_3.png'
 
 
 const Portfolio = () => {
@@ -16,7 +16,7 @@ const Portfolio = () => {
       <div className=" absolute right-0 rounded-full w-52 h-52 bg-gradient-to-r from-orange-700 to-yellow-300 p-4">
     
       </div>
-      <img src={ai_image} className='absolute w-32 left-10 z-50'/>
+      <img src={ai_image_3} alt='Ai Image' className='absolute w-32 left-10 z-50'/>
     <div className="absolute right-10 rounded-full w-24 h-24 border-2 border-gray-200"></div>
  
     </div>
