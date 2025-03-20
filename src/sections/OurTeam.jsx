@@ -11,6 +11,7 @@ import logo3 from '../ImageAssets/partners_logo/logo3.png'
 import logo4 from '../ImageAssets/partners_logo/logo4.png'
 import logo5 from '../ImageAssets/partners_logo/logo5.png'
 import logo6 from '../ImageAssets/partners_logo/logo6.png'
+import {motion} from 'motion/react';
 
 
 
@@ -18,17 +19,17 @@ import logo6 from '../ImageAssets/partners_logo/logo6.png'
 
 const OurTeam = () => {
   return (
-    <div className='flex flex-col justify-center items-center gap-[32px]'>
+    <div id="team" className='flex flex-col justify-center items-center gap-[32px]'>
       
     <Uniquetitle txt="Team Members"/>
 
-    <h1 className="font-sans text-white text-center text-[32px]">
+    <motion.h1 initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className="font-sans text-white text-center text-[32px]">
     Our Amazing Team
-       <br/>  Members</h1>  
+       <br/>  Members</motion.h1>  
        
        
 
-       <div className="flex gap-10 mx-auto w-40  justify-center items-center">
+       <motion.div initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className="lg:flex grid grid-cols-2 gap-10 sm:mx-auto w-full  justify-center items-center px-7">
        
        
        
@@ -40,19 +41,19 @@ const OurTeam = () => {
 
 
        
-       </div>
+       </motion.div>
 
 
        <div className="[ bg-gradient-to-b from-white/20 to-white/20 ]
 [ border-[1px] border-solid border-white border-opacity-40 ] rounded-full  p-3">
        
-       <h1 className='font-sans text-white text-[10px]'> We are Partnered with Top brands</h1>
+       <motion.h1 initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className='font-sans text-white text-[10px]'> We are Partnered with Top brands</motion.h1>
        
        
        
        </div>
 
-       <div className="flex gap-10"> 
+       <motion.div initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className="flex gap-10"> 
        <img src={logo1} className='w-12 opacity-20'/>
        <img src={logo2} className='w-12 opacity-20'/>
        <img src={logo3} className='w-12 opacity-20'/>
@@ -60,7 +61,7 @@ const OurTeam = () => {
        <img src={logo5} className='w-12 opacity-20'/>
        <img src={logo6} className='w-12 opacity-20'/>
 
-       </div>
+       </motion.div>
 
 
     </div>

@@ -7,8 +7,8 @@ const TeamMember = ({name,img,position}) => {
   
   return (
 
-    <div className='flex text-center flex-col gap-[16px]'>
-    <div className=' min-w-[200px] min-h-[80px]  rounded-2xl backdrop-blur-2xl 
+    <div className='flex text-center items-center justify-center flex-col gap-[16px]'>
+    <div className='flex items-center justify-center w-[200px] min-h-[80px]  rounded-2xl backdrop-blur-2xl 
     [ bg-gradient-to-b from-white/20 to-white/20 ]
 [ border-[1px] border-solid border-white border-opacity-30 ]
 [ shadow-black/70 shadow-2xl ] p-[16px] '>

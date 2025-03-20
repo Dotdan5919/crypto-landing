@@ -3,10 +3,11 @@ import ai_image from '../ImageAssets/ai_image.png';
 import Smallbox1 from './Smallbox1';
 import Purpleball from './Purpleball';
 import Smallbox2 from './Smallbox2';
+import {motion} from 'motion/react'
 
 const RightSideHero = () => {
   return (
-    <div className='relative  flex w-auto h-[452px]  justify-center z-10 '>
+    <div className='relative  flex w-auto h-[452px]  justify-center z-10    scale-75 sm:scale-100'>
 
     <Purpleball classes=" top-44  -right-20 z-20 w-10 h-10" />
     <Smallbox1 smalltext="Current Bid"  largetext="2.26 ETH" classes=" z-20 -right-20 top-24  w-[180px] h-[80px]"/>

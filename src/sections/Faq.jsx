@@ -6,6 +6,7 @@ import { CryptoQ } from '../Data/CryptoQ.ts'
 import { CollectionQ } from '../Data/CollectionQ.ts'
 import { NftQ } from '../Data/NftQ.ts'
 import { TradingQ } from '../Data/TradingQ.ts'
+import {motion} from 'motion/react'
 
 
 const Faq = () => {
@@ -46,14 +47,14 @@ case "Cryptocurrency":
 },[activeFaq])
 
   return (
-    <div className='flex flex-col gap-3 text-white text-center items-center justify-center'>
+    <div id="faq" className='flex flex-col gap-3 text-white text-center items-center justify-center mx-8'>
       
     <Uniquetitle txt="FAQs" />
 
-<h1 className='font-sans text-[30px]'> Frequently Asked <br/> Questions</h1>
+<motion.h1 initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className='font-sans text-[30px]'> Frequently Asked <br/> Questions</motion.h1>
 
-<p>Below is a list of Frequently asked questions and answers questions and 
-answers from partners and 3D artist <br/> Please check this FAQ first before contacting us</p>
+<motion.p initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}}>Below is a list of Frequently asked questions and answers questions and 
+answers from partners and 3D artist <br/> Please check this FAQ first before contacting us</motion.p>
 
 
 <div className="flex flex-col gap-5">
@@ -71,12 +72,12 @@ answers from partners and 3D artist <br/> Please check this FAQ first before con
 </div>
 <hr className='w-full border-[1px] opacity-30 rounded-full border-white'/>
 
-<div class="flex gap-5">
-  <div class="">  {faqs.slice(0, 4).map((Faq) => (
+<div class="flex sm:gap-5 gap-5 flex-col sm:flex-row">
+  <div class="flex flex-col gap-5">  {faqs.slice(0, 4).map((Faq) => (
       <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description} />
     ))}
   </div>
-  <div class="">  {faqs.slice(4).map((Faq) => (
+  <div class="flex flex-col gap-5">  {faqs.slice(4).map((Faq) => (
       <FaqComponent key={Faq.id} number={Faq.number} txt={Faq.Question} description={Faq.description} />
     ))}
   

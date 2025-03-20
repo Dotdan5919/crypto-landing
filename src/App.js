@@ -14,11 +14,17 @@ import OurTeam from './sections/OurTeam.jsx'
 import Testimonial from './sections/Testimonial.jsx'
 import Faq from './sections/Faq.jsx';
 import Portfolio from './sections/Portfolio.jsx';
+import Newsletter from './sections/Newsletter.jsx';
+import Footer from './sections/Footer.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
 function App() {
   return (
+
+    <BrowserRouter>
+
     <div className="w-full md:px-[120px] relative  bg-b-blue flex-col justify-center  gap-2 overflow-hidden ">
      
    <Hero/>
@@ -39,7 +45,14 @@ function App() {
 <Faq/>
 <Portfolio/>
 
+
+<Newsletter/>
+
+<Footer/>
+
     </div>
+
+    </BrowserRouter>
   );
 }
 

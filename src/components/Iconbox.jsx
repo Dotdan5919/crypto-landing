@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaAnchor, FaBoxes, FaConnectdevelop, FaSellcast } from 'react-icons/fa'
 import Uniquetitle  from './Uniquetitle'
 import { FaBasketShopping } from 'react-icons/fa6'
+import {motion} from 'motion/react'
 
 const Iconbox = ({title,description,step,icon}) => {
   let Iconclass="text-[70px] text-white ";
@@ -43,7 +44,7 @@ switch (icon){
 
 
   return (
-    <div className='flex relative sm:max-w-[520px] max-w-[400px]  gap-[16px] items-center bg-gradient-to-b  from-blue-950 rounded-2xl to-transparent px-[32px]  py-[32px]'>
+    <motion.div initial={{y:-10,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:.6}}} className='flex relative sm:max-w-[520px] max-w-[400px]  gap-[16px] items-center bg-gradient-to-b  from-blue-950 rounded-2xl to-transparent px-[32px]  py-[32px]'>
      
     <div className='absolute -top-4 '>
     <Uniquetitle txt={step}/>
@@ -57,7 +58,7 @@ switch (icon){
 <p className='text-white text-sm'>{description}</p>
 </div>
 
-    </div>
+    </motion.div>
   )
 }
 

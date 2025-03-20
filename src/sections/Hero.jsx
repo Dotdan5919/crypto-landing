@@ -9,7 +9,7 @@ import lines from '../ImageAssets/lines.png'
 
 const Hero = () => {
   return (
-    <div className='w-full    flex gap-[48px] flex-col relative inset-0 z-50 '>
+    <div id="home" className='w-full    flex gap-[48px] flex-col relative inset-0 z-50 '>
 
     <Navigation/>
 

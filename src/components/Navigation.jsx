@@ -24,12 +24,12 @@ const Navigation = () => {
 
 <div className='hidden gap-[24px] cursor-pointer flex-col md:flex-row md:flex '>
 
-    <Navlist name="Home"/>
-    <Navlist name="Explore"/>
-    <Navlist name="About"/>
-    <Navlist name="Roadmap"/>
-    <Navlist name="Team"/>
-    <Navlist name="Contact"/>
+    <Navlist name="Home"    link="home" />
+    <Navlist name="Explore"    link="collection" />
+    <Navlist name="About"    link="about" />
+    <Navlist name="Roadmap"    link="roadmap" />
+    <Navlist name="Team"    link="team" />
+    <Navlist name="Contact"    link="" />
 
 
     

@@ -17,10 +17,7 @@ const Imgcarousel = () => {
   useEffect(()=>{
 
 
-  //  if(deactivateBtn==="Left"){
 
-  //   setDeactivateBtn("Right");
-  //  }
   
  console.log(deactivateBtn)
 
@@ -31,7 +28,7 @@ const Imgcarousel = () => {
     
     // 
     if(sliderRef.current){ 
-    // let slider=document.getElementById('slider');
+ 
     if(sliderRef.current.scrollLeft>0){
       sliderRef.current.style.scrollBehavior="smooth";
       sliderRef.current.scrollLeft-=sliderRef.current.clientWidth;
@@ -101,11 +98,11 @@ const handleClickDot=(x)=>
 
   
   return (
-    <div className='flex gap-[16px] w-full flex-col '>
+    <div className='flex gap-[16px] w-full flex-col items-center justify-center'>
       
-<div   className='flex gap-[16px] w-full overflow-hidden' id='slider' ref={sliderRef} >
+<div   className='flex gap-[16px] w-5/6  lg:w-full overflow-hidden' id='slider' ref={sliderRef} >
   
-<div className=' ml-52'></div>
+<div className=' lg:ml-52'></div>
 
 {Collection.map((item)=>{
 
@@ -147,14 +144,14 @@ return(<CarouselElement img={item.img} name={item.name}/>)
 else{
 
   if(scrollposition===index){
-console.log(index);
+
     return (
     <FaCircle className='text-white' key={index}  size={9} onClick={()=>handleClickDot(index)}/>
     )
   }
   else{
     
-console.log(index);
+
   
     return(
     <FaCircle className='text-white  opacity-20' size={9} onClick={()=>handleClickDot(index)}/>

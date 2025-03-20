@@ -14,7 +14,7 @@ const Textbox = ({title,description,txt,icon}) => {
 
 
   return (
-    <div className='flex relative sm:max-w-[300px] max-w-[300px]  gap-[16px] items-center bg-gradient-to-b  from-blue-950 rounded-2xl to-transparent px-[32px]  py-[32px]'>
+    <div className='flex relative sm:max-w-[300px] max-w-[270px]  gap-[16px] items-center bg-gradient-to-b  from-blue-950 rounded-2xl to-transparent px-[32px]  py-[32px]'>
      
     <div className='absolute -top-4 '>
     <Uniquetitle txt={txt}/>
